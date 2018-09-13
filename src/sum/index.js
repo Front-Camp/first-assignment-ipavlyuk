@@ -10,21 +10,13 @@
 * sum(-1, 13); // 12
 */
 const sum = (a, b) => {
-   let newArr = [];
-    let sum = 0;
-    for (let i = 0, b = 1 ; i < arr.length; i++, b++) {
-        newArr.push(arr[i]);
-        sum += arr[i];
-        if ( b === 2 ) {
-            if (sum === base) {
-                return newArr;
-            } else {
-                b = 1;
-                newArr = [];
-                i = 1;
-            }
-        }
+   let arr = [a, b];
+  for (let i = 0; i < arr.length; i++) {
+    if (isNaN(arr[i]) || arr[i] === Infinity || arr[i] === -Infinity || typeof arr[i] !== 'number') {
+        throw new TypeError('Error!');
     }
+  }
+  return a + b;
 };
 
 export default sum;
