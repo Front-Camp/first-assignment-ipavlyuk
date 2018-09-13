@@ -7,7 +7,21 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  /* your logic here...*/
+  let newArr = [];
+    for (let j = 0; j < arr.length; j++) {
+        if (isNaN(arr[j]) || arr[j] === Infinity || arr[j] === -Infinity) {
+            continue;
+        } else {
+            newArr.push(arr[j]);
+        }
+    }
+    let maxNumber = newArr[0];
+      for (let i = 0; i < newArr.length; i++) {
+          if (newArr[i] > maxNumber) {
+              maxNumber = newArr[i];
+          }
+      } 
+      return maxNumber;
 };
 
 export default max;
